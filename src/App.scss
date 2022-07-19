@@ -12,7 +12,7 @@ body,
 .App {
   display: flex;
   font-family: "Raleway", sans-serif;
-  min-height: 1000px;
+  min-height: 100%;
 }
 
 .sidebar {
@@ -230,12 +230,65 @@ body,
   opacity: 0.5;
 }
 
+.highlight-today {
+  padding: 1em 5vw;
+}
+.highlight {
+  background-color: #1e213a;
+  padding: 1em 2em;
+  text-align: center;
+}
+
+.all-highlight {
+  grid-gap: 1em;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+}
+.highlight-main {
+  font-size: 28px;
+}
+
+span.direction {
+  background: #6e707a;
+  border-radius: 50%;
+  font-size: 20px !important;
+  margin: 0 5px;
+  padding: 7px;
+  vertical-align: middle;
+}
+
+.highlight-main span {
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.container {
+  background-color: #e7e7eb;
+  border-radius: 10px;
+  height: 10px;
+  width: 100%;
+}
+
+.percentages {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.humidity {
+  background-color: #ffec65;
+  border-radius: 10px;
+  display: block;
+  height: 10px;
+}
+
 @media screen and (max-width: 1000px) {
   .App {
     flex-direction: column;
   }
-  .major,
-  .minor {
+  .main,
+  .sidebar {
     width: 100%;
   }
   .week-forecast {
@@ -255,7 +308,7 @@ body,
 }
 
 @media screen and (max-width: 500px) {
-  .features {
+  .all-highlight {
     grid-template-columns: auto;
   }
 }

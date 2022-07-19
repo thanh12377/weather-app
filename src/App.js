@@ -2,6 +2,7 @@ import React from "react";
 import { Fragment, useState, useEffect } from "react";
 import Today from "./component/Today";
 import Forecast from "./component/Forecast";
+import TodayHighlight from "./component/TodayHighlight";
 import "./App.scss";
 
 function App() {
@@ -14,7 +15,11 @@ function App() {
   const [location, setLocation] = useState("Ho Chi Minh, Viet Nam");
   const [forecast,setForecast] = useState([])
 
-  
+  useEffect(() => {
+    setForecast([]);
+    getWeatherData();
+    
+  }, [coordinates]);
 
   const getLocation = async () => {
     if (navigator.geolocation) {
@@ -33,11 +38,7 @@ function App() {
           );
     }
   };
-  useEffect(() => {
-    setForecast([]);
-    getWeatherData();
-    
-  }, [coordinates]);
+  
   
   const getWeatherData = async () => {
     await fetch(
@@ -140,6 +141,7 @@ function App() {
           </button>
         </div>
       <Forecast forecast={forecast} tempType ={tempType}/>
+      <TodayHighlight today = {today}/>
       </div>
     </div>
   );
