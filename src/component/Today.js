@@ -48,7 +48,7 @@ const Today = ({
             Search for places
           </button>
           <button className="search-button">
-            <span className="material-icons">my_location</span>
+            <span className="material-icons" onClick={()=>getLocation()}>my_location</span>
           </button>
         </div>
         <div className="weather-icon">

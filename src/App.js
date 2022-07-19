@@ -29,8 +29,8 @@ function App() {
           .then((response) => response.json())
           .then((data) => {
             setLocation(data.locality + ", " + data.countryCode);
-          });
-      });
+          })}
+          );
     }
   };
   useEffect(() => {
