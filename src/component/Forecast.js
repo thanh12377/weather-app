@@ -11,7 +11,7 @@ const Forecast = ({forecast, tempType}) =>{
                         <img alt='' style={{width: '100%', maxWidth: '75px', height:'auto'}} src={require("../images/"+day.condition+".png")} />
                         {tempType ==='C' ?
                         <div className="temps">
-                            <p>{day.maxTemp}&deg;C</p>
+                            <p>{parseInt(day.maxTemp)}&deg;C</p>
                             <p className="min">{parseInt(day.minTemp)}&deg;C</p>
                         </div>
                         :
