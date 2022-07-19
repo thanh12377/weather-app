@@ -1,0 +1,261 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  display: flex;
+  font-family: "Raleway", sans-serif;
+  min-height: 1000px;
+}
+
+.sidebar {
+  width: 30%;
+  background-color: #1e213a;
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.search-buttons {
+  padding: 2em;
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-place {
+  background-color: #6e707a;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.search-button {
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.search-place:hover,
+.search-button:hover {
+  opacity: 0.8;
+}
+
+.weather-icon {
+  display: block;
+  position: relative;
+  padding: 3em 0;
+}
+
+.weather-icon::after {
+  content: "";
+  background: url(./images/Cloud-background.png);
+  opacity: 0.3;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.text {
+  color: #a09fb1;
+}
+
+.temperature {
+  color: #e7e7eb;
+  font-size: 70px;
+}
+
+.main {
+  width: 70%;
+  background-color: #100e1d;
+  color: white;
+}
+
+.main p {
+  text-align: center;
+}
+
+.degrees {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1em 5vw;
+}
+
+.degrees-button {
+  background-color: #585676;
+  border: none;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 10px;
+  padding: 1em;
+  cursor: pointer;
+}
+
+.degrees-button:hover {
+  opacity: 0.8;
+}
+
+.degrees-button.active {
+  background-color: #e7e7eb;
+  color: #110e3c;
+}
+
+.close-btn {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1em;
+  cursor: pointer;
+}
+
+.overlay {
+  position: absolute;
+  width: 30%;
+  height: 100%;
+  background-color: #1e213a;
+  left: -30%;
+  transition: 0.3s;
+  transition-timing-function: ease-out;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+}
+
+.overlay.active {
+  left: 0;
+  transition: 0.3s;
+  transition-timing-function: ease-in;
+}
+
+.search-location {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 80%;
+}
+
+.search-location div {
+  border: 1px solid #fff;
+  padding: 10px;
+}
+
+.search-location div span {
+  color: #585676;
+  margin: 0 5px;
+  vertical-align: middle;
+}
+
+.search-location input {
+  background: transparent;
+  border: none;
+  color: #fff;
+  outline: none;
+}
+
+.search-location button {
+  background-color: #3c47e9;
+  border: none;
+  color: #fff;
+  outline: none;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.city-button {
+  background-color: initial;
+  border: 1px solid transparent;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  margin: 1em auto;
+  padding: 1em;
+  text-align: initial;
+  width: 80%;
+}
+
+.city-button span {
+  color: transparent;
+}
+.city-button:hover {
+  border: 1px solid #585676;
+}
+.city-button:hover span {
+  color: #585676;
+}
+
+.day,
+.week-forecast {
+  display: flex;
+  justify-content: space-between;
+}
+
+.week-forecast {
+  padding: 1em 5vw;
+}
+
+.week-forecast {
+  display: flex;
+  justify-content: space-between;
+}
+.day {
+  background-color: #1e213a;
+  padding: 1em 1.5vw;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.temps {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.temps .min {
+  opacity: 0.5;
+}
+
+@media screen and (max-width: 1000px) {
+  .App {
+    flex-direction: column;
+  }
+  .major,
+  .minor {
+    width: 100%;
+  }
+  .week-forecast {
+    flex-wrap: wrap;
+  }
+  .degrees {
+    display: none;
+  }
+  .overlay {
+    width: 100%;
+    left: -100%;
+  }
+  .search-location div {
+    width: 80%;
+    text-align: initial;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .features {
+    grid-template-columns: auto;
+  }
+}
